@@ -56,6 +56,7 @@ const Login = () => {
                     setTimeout(() => {
                         setErrors(errors => ({...errors, success: 'Login successful'}));
                         setAuthUser(data);
+                        window.location.reload();
                     }, 1000);
                 }
             } catch (err: unknown) {
