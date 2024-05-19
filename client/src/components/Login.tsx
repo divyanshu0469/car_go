@@ -1,10 +1,11 @@
 import { ChangeEvent, useState } from "react";
 import axios, { AxiosError } from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from "../context/AuthContext.tsx";
 
 const Login = () => {
     const { setAuthUser } = useAuthContext();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -56,7 +57,7 @@ const Login = () => {
                     setTimeout(() => {
                         setErrors(errors => ({...errors, success: 'Login successful'}));
                         setAuthUser(data);
-                        window.location.reload();
+                        navigate('/');
                     }, 1000);
                 }
             } catch (err: unknown) {
