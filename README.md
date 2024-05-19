@@ -113,5 +113,5 @@ Contributions are welcome! Please follow these steps:
 
 If you have any questions or feedback, feel free to reach out:
 
-- **Email:** divyadav31@gmail.com
+- **Email:** divyyadav31@gmail.com
 - **GitHub:** [divyanshu0469](https://github.com/divyanshu0469)
