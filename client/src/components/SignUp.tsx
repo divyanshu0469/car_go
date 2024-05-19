@@ -78,7 +78,7 @@ const SignUp = () => {
         }
         if(valid) {
             try {
-                const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/auth/signup', { name, email, mobile, password, gender, aadharNumber });
+                const response = await axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/auth/signup`, { name, email, mobile, password, gender, aadharNumber });
                 if(response.status === 201) {
                     setErrors(errors => ({...errors, success: 'Signup successful'}));
                     setTimeout(() => {

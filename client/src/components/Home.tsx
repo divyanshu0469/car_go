@@ -29,7 +29,7 @@ const Home = () => {
         }
         
         try {
-            const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/search', { token: authUser.token, source, dest, date, passengers });
+            const response = await axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/search`, { token: authUser.token, source, dest, date, passengers });
             if(response.status === 201) {
                 setErrors({...errors, message: '', error: ''});
                 setResults(response.data.results);

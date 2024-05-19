@@ -13,7 +13,7 @@ const MyRides = () => {
     
 
     useEffect(() => {
-        axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/myRides', { token: authUser.token }).then((response) => {
+        axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/myRides`, { token: authUser.token }).then((response) => {
             if(response.status === 201) {
                 setErrors({...errors, message: '', error: ''});
                 setResults(response.data.results);

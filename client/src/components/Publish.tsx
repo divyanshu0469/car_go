@@ -27,7 +27,7 @@ const Publish = () => {
         }
         
         try {
-            const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/publish', { token: authUser.token, source, dest, date, passengers })
+            const response = await axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/publish`, { token: authUser.token, source, dest, date, passengers })
             if(response.status === 201) {
                 setErrors({...errors, message: response.data.message, error: ''});
             }

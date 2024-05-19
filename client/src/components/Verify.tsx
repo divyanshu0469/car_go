@@ -28,7 +28,7 @@ const Verify = () => {
         }
         if(valid) {
             try {
-                const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/auth/verify', { code });
+                const response = await axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/auth/verify`, { code });
                 if(response.status === 201) {
                     setErrors(errors => ({...errors, success: 'Verification Successfull'}));
                     console.log(response);
