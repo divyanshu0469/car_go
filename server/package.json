@@ -20,7 +20,8 @@
   "version": "1.0.0",
   "main": "connection.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "type": "module",
   "keywords": [],
