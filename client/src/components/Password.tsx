@@ -59,7 +59,7 @@ const Password = () => {
 
         if(valid) {
             try {
-                const response = await axios.put('http://localhost:5001/api/changePass', { token: authUser.token, old: og, newPassword });
+                const response = await axios.put(import.meta.env.VITE_SERVER_ROUTE+'api/changePass', { token: authUser.token, old: og, newPassword });
                 if(response.status === 201) {
                     setErrors(errors => ({...errors, success: response.data.success}));
                     setLoading(false);

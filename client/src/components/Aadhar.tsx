@@ -30,7 +30,7 @@ const Aadhar = () => {
 
   const getAadhar = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/api/getDetails', { token:authUser.token });
+      const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/getDetails', { token:authUser.token });
       if(response.status === 201) {
         setProfileData({
           aadharPic: response.data.user.aadharPic,
@@ -78,7 +78,7 @@ const Aadhar = () => {
         await uploading(formData);
     }
     try {
-        const response = await axios.post('http://localhost:5001/api/setAadhar', { token:authUser.token, aadharNumber, aadharPic: aadharURL });
+        const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/setAadhar', { token:authUser.token, aadharNumber, aadharPic: aadharURL });
         if(response.status === 201) {
             setErrors(errors => ({...errors, success: 'Aadhar details saved'}));
             setInterval(() => {

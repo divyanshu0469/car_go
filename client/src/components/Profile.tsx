@@ -38,7 +38,7 @@ const Profile = () => {
   }
   const getDetails = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/api/getProfile', { token:authUser.token });
+      const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/getProfile', { token:authUser.token });
       if(response.status === 201) {
         setProfileData({
           profilePic: response.data.profilePic,
@@ -104,7 +104,7 @@ const Profile = () => {
       }
       
       setTimeout(() => {
-        axios.post('http://localhost:5001/api/setProfile', {token: authUser.token, name: name, miniBio: miniBio, mobile: mobile, profilePic: profilePic})
+        axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/setProfile', {token: authUser.token, name: name, miniBio: miniBio, mobile: mobile, profilePic: profilePic})
         .then((response) => {
           if(response.status === 201) {
               setErrors(errors => ({...errors, success: 'Profile changes saved'}));

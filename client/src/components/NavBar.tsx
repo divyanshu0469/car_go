@@ -17,7 +17,7 @@ const NavBar = () => {
     const getPic = async () => {
       if(authUser) {
         try {
-          const response = await axios.post('http://localhost:5001/api/getProfile', authUser);
+          const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/getProfile', authUser);
           if(response.status === 201) {
             setPic(response.data.profilePic);
             setName(response.data.name);

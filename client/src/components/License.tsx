@@ -32,7 +32,7 @@ const License = () => {
 
   const getLicense = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/api/getDetails', { token:authUser.token });
+      const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/getDetails', { token:authUser.token });
       if(response.status === 201) {
         setProfileData({
             licensePic: response.data.user.licensePic,
@@ -88,7 +88,7 @@ const License = () => {
         await uploading(formData);
     }
     try {
-        const response = await axios.post('http://localhost:5001/api/setLicense', { token:authUser.token, licenseNumber, licensePic: licenseURL, vehicle });
+        const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/setLicense', { token:authUser.token, licenseNumber, licensePic: licenseURL, vehicle });
         if(response.status === 201) {
             setErrors(errors => ({...errors, success: 'License details saved'}));
             setInterval(() => {

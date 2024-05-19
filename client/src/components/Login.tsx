@@ -44,7 +44,7 @@ const Login = () => {
         }
         if(valid) {
             try {
-                const response = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+                const response = await axios.post(import.meta.env.VITE_SERVER_ROUTE+'api/auth/login', { email, password });
                 if(response.status === 201) {
                     setErrors(errors => ({...errors, success: 'Login successful'}));
                     setLoading(false);
