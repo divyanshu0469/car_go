@@ -7,8 +7,8 @@ const sendEmail = async (email_to, statusCode) => {
         port:465,
         secure:false,
         auth:{
-            user:"divyanshuthegreat101@gmail.com",
-            pass:'uetyazqipdctxqpj'
+            user:process.env.SENDER_MAIL,
+            pass:process.env.SENDER_PASS
         }
     });
     var mailmsg=`
