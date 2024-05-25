@@ -82,9 +82,9 @@ const Login = () => {
                 <p className="text-center">Don't Have an account ? <Link to="/signup" className="text-lightBlue underline">Sign Up</Link></p>
             </div>
             <div className="flex flex-col justify-center items-center w-1/2 max-lg:w-full h-full gap-3 py-4">
-                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black focus:outline-none hover:bg-gray-400 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.email && <p className="text-red-600 text-xs">{errors.email}</p>}
-                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black focus:outline-none hover:bg-gray-400 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.password && <p className="text-red-600 text-xs">{errors.password}</p>}
                 {errors.message && <p className="text-red-600 text-md">{errors.message}</p>}
                 {errors.success && <p className="text-green-600 text-md">{errors.success}</p>}

@@ -94,26 +94,26 @@ const SignUp = () => {
 
     return (
     <div className="w-full h-full p-4 flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-3/4 max-lg:flex-col max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 justify-around items-center max:md:flex-col bg-darkBlue text-white text-lg font-semibold outline-2 outline">
+        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-3/4 max-lg:flex-col max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 justify-around items-center max:md:flex-col bg-white text-darkBlue text-lg font-semibold outline-2 outline">
             <div className="flex justify-center flex-col items-center">
                 <h1 className="font-extrabold text-5xl mt-6 mb-12 px-6 text-center max-sm:text-3xl">Sign Up</h1>
                 <p className="max-sm:text-sm text-center">Already have an account ? <Link to="/login" className="text-lightBlue underline">Login</Link></p>
             </div>
             <div className="flex flex-col max-lg:w-full justify-center items-center w-1/2 h-full gap-3 py-4">
-                <input required onChange={handleInputChange} value={formData.name} name="name" type="text" id="name" placeholder="Name" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.name} name="name" type="text" id="name" placeholder="Name" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.name && <p className="text-red-600 text-xs">{errors.name}</p>}
-                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.email && <p className="text-red-600 text-xs">{errors.email}</p>}
-                <input required onChange={handleInputChange} value={formData.mobile} name="mobile" type="phone" id="mobile" placeholder="Mobile" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.mobile} name="mobile" type="phone" id="mobile" placeholder="Mobile" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.mobile && <p className="text-red-600 text-xs">{errors.mobile}</p>}
-                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
-                <input required onChange={handleInputChange} value={formData.cPassword} name="cPassword" type="text" id="cPassword" placeholder="Confirm Password" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.cPassword} name="cPassword" type="text" id="cPassword" placeholder="Confirm Password" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.password && <p className="text-red-600 text-xs">{errors.password}</p>}
-                <input required onChange={handleInputChange} value={formData.aadharNumber} name="aadharNumber" type="phone" id="aadharNumber" placeholder="Enter Aadhar Number" className="text-black appearance-none text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.aadharNumber} name="aadharNumber" type="phone" id="aadharNumber" placeholder="Enter Aadhar Number" className="text-black focus:outline-none hover:bg-gray-200 appearance-none text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.aadharNumber && <p className="text-red-600 text-xs">{errors.aadharNumber}</p>}
                 <div>
-                    <label htmlFor="gender">Gender: </label>
-                    <select required id="gender" onChange={handleGenderChange} value={selectedGender} className="bg-white text-black rounder-lg">
+                    <label htmlFor="gender" className="focus:outline-none hover:bg-gray-200">Gender: </label>
+                    <select required id="gender" onChange={handleGenderChange} value={selectedGender} className="bg-white focus:outline-none hover:bg-gray-200 text-black rounder-lg">
                         <option value=""></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -122,7 +122,7 @@ const SignUp = () => {
                 </div>
                 {errors.message && <p className="text-red-600 text-md">{errors.message}</p>}
                 {errors.success && <p className="text-green-600 text-md">{errors.success}</p>}
-                <button type="submit" className="bg-white text-lightBlue rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-105 max-md:w-2/3 mt-4 py-2">Submit</button>
+                <button type="submit" className="bg-lightBlue text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-105 max-md:w-2/3 mt-4 py-2">Submit</button>
                 
             </div>
         </form>
