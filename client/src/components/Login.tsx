@@ -76,15 +76,15 @@ const Login = () => {
 
     return (
     <div className="w-full h-3/4 p-4 font-lato flex justify-center items-center">
-        <form noValidate onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 max-lg:flex-col justify-around items-center bg-darkBlue text-white text-lg font-semibold outline-2 outline-double">
+        <form noValidate onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 max-lg:flex-col justify-around items-center bg-white text-darkBlue text-lg font-semibold outline-2 outline-double">
             <div className="flex justify-center flex-col items-center">
                 <h1 className="font-extrabold text-5xl mt-6 mb-12 px-6 text-center max-sm:text-3xl">Login</h1>
                 <p className="text-center">Don't Have an account ? <Link to="/signup" className="text-lightBlue underline">Sign Up</Link></p>
             </div>
             <div className="flex flex-col justify-center items-center w-1/2 max-lg:w-full h-full gap-3 py-4">
-                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.email} name="email" type="email" id="email" placeholder="Email" className="text-black focus:outline-none text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.email && <p className="text-red-600 text-xs">{errors.email}</p>}
-                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={formData.password} name="password" type="password" id="password" placeholder="Password" className="text-black focus:outline-none text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.password && <p className="text-red-600 text-xs">{errors.password}</p>}
                 {errors.message && <p className="text-red-600 text-md">{errors.message}</p>}
                 {errors.success && <p className="text-green-600 text-md">{errors.success}</p>}
