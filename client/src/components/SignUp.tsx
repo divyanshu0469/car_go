@@ -112,7 +112,7 @@ const SignUp = () => {
                 <input required onChange={handleInputChange} value={formData.aadharNumber} name="aadharNumber" type="phone" id="aadharNumber" placeholder="Enter Aadhar Number" className="text-black focus:outline-none hover:bg-gray-200 appearance-none text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.aadharNumber && <p className="text-red-600 text-xs">{errors.aadharNumber}</p>}
                 <div>
-                    <label htmlFor="gender" className="focus:outline-none hover:bg-gray-200">Gender: </label>
+                    <label htmlFor="gender">Gender: </label>
                     <select required id="gender" onChange={handleGenderChange} value={selectedGender} className="bg-white focus:outline-none hover:bg-gray-200 text-black rounder-lg">
                         <option value=""></option>
                         <option value="Male">Male</option>
