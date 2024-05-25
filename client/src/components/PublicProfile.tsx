@@ -63,7 +63,7 @@ const PublicProfile = () => {
                 
             </div>
 
-            <div className="w-full grid grid-cols-2 max-lg:grid-cols-1">
+            <div className="w-full grid grid-cols-2 max-lg:grid-cols-1 text-center">
               Please use mobile or email to connect with the driver
                 <div className="flex justify-center itmes-center">
                     <div className="relative border-2 rounded-md p-2 border-darkBlue h-fit w-fit mt-2 hover:shadow-bottom">
