@@ -49,16 +49,16 @@ const Verify = () => {
 
     return (
     <div className="w-full h-3/4 p-4 font-lato flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 flex-col justify-around items-center bg-darkBlue text-white text-lg font-semibold outline-2 outline-double">
+        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 flex-col justify-around items-center bg-white text-darkBlue text-lg font-semibold outline-2 outline-double">
             <div className="flex justify-center flex-col items-center">
                 <h1 className="font-extrabold text-5xl mt-6 mb-12 px-6 text-center max-sm:text-3xl">Verify Mail</h1>
             </div>
             <div className="flex flex-col justify-center items-center w-1/2 max-lg:w-full h-full gap-3 py-4">
                 <label htmlFor="code" className="text-center">Please enter verification code sent to your email :</label>
-                <input required onChange={handleInputChange} value={code} name="code" type="phone" id="code" placeholder="Code" className="text-black text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
+                <input required onChange={handleInputChange} value={code} name="code" type="phone" id="code" placeholder="Code" className="text-black focus:outline-none hover:bg-gray-200 text-left rounded-md h-6 py-5 px-3 w-1/2 max-md:w-2/3"/>
                 {errors.code && <p className="text-red-600 text-sm">{errors.code}</p>}
                 {errors.success && <p className="text-green-600 text-md">{errors.success}</p>}
-                <button type="submit" className="bg-white text-lightBlue rounded-md px-3  w-fit hover:opacity-85 hover:scale-105 max-md:w-fit mt-4 py-2">Verify</button>
+                <button type="submit" className="bg-lightBlue text-white rounded-md px-3  w-fit hover:opacity-85 hover:scale-105 max-md:w-fit mt-4 py-2">Verify</button>
             </div>
         </form>
     </div>
