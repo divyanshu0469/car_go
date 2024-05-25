@@ -64,7 +64,7 @@ const PublicProfile = () => {
             </div>
 
             <div className="w-full grid grid-cols-2 max-lg:grid-cols-1 text-center">
-                <div className="flex justify-center itmes-center">
+                <div className="flex justify-center itmes-center flex-col">
                     Please use mobile or email to connect with the driver
                     <div className="relative border-2 rounded-md p-2 border-darkBlue h-fit w-fit mt-2 hover:shadow-bottom">
                         <p className=" text-gray-500 absolute text-xs bg-white top-[-10px] left-1/10 px-1">Mobile</p>{profileData.mobile}
