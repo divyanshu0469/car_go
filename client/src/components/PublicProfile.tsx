@@ -19,7 +19,7 @@ const PublicProfile = () => {
 
       const getDetails = async () => {
         try {
-          const response = await axios.get(`http://localhost:5001/api/getPublicProfile/${userId}`);
+          const response = await axios.get(`${import.meta.env.VITE_SERVER_ROUTE}api/getPublicProfile/${userId}`);
           if(response.status === 201) {
             setProfileData({
               profilePic: response.data.profilePic,
