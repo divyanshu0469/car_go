@@ -14,9 +14,7 @@ const ActiveRides = () => {
       error: ''
   });
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    
+  const handleSearch = async () => {
     try {
         const response = await axios.post(`${import.meta.env.VITE_SERVER_ROUTE}api/activeRides`, { token: authUser.token});
         if(response.status === 201) {
