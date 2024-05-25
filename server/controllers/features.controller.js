@@ -193,6 +193,25 @@ export const search = async (req, res) => {
     }
 };
 
+export const activeRides = async (req, res) => {
+    const { token } = req.body;
+
+    const user_id = jwt.verify(token, process.env.JWT_SECRET).userId;
+    try {
+        const response = await Publish.find({date: {$gte : new Date().toISOString().split('T')[0]}, userId: { $ne: user_id }});
+
+        if(response.length > 0) {
+            res.status(201).json({results: response});
+        } else {
+            res.status(400).json({error:"No rides Found"});
+        }
+    } catch (error) {
+        console.log("Error in active Rides controller", error.message);
+        res.status(500).json({error:"Internal Server Error"});
+    }
+};
+
+
 export const myRides = async (req, res) => {
     const { token } = req.body;
 

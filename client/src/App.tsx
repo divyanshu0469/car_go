@@ -9,6 +9,7 @@ import Verify from "./components/Verify.tsx";
 import Password from "./components/Password.tsx";
 import Publish from "./components/Publish.tsx";
 import MyRides from "./components/MyRides.tsx";
+import ActiveRides from "./components/ActiveRides.tsx";
 import PublicProfile from "./components/PublicProfile.tsx";
 import Aadhar from "./components/Aadhar.tsx";
 import License from "./components/License.tsx";
@@ -21,6 +22,7 @@ function App() {
         <NavBar/>
       <Routes>
         <Route path="/" element={authUser ? <Navigate to='/home'/> : <Navigate to='/login' />} />
+        <Route path="/activeRides" element={authUser ? <ActiveRides /> : <Navigate to='/login' />} />
         <Route path="/home" element={authUser ? <Home /> : <Navigate to='/login' />} />
         <Route path="/my-rides" element={authUser ? <MyRides /> : <Navigate to='/login' />} />
         <Route path="/publish" element={authUser ? <Publish /> : <Navigate to='/login' />} />

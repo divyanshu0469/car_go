@@ -39,6 +39,9 @@ const Home = () => {
             setErrors(errors => ({...errors, message: '', error: ((err as AxiosError).response?.data?.error ?? 'an error') as string }));
         }
     }
+    useEffect(() => {
+        handleSearch();
+      }, [])
 
     const handleLinkToProfile = (user_id) => {
         navigate(`/profile/${user_id}`);
@@ -54,7 +57,7 @@ const Home = () => {
                 <div className="flex flex-col w-4/5 items-center rounded-md">
                     <label htmlFor="date" className="flex flex-row max-sm:flex-col items-center gap-2">
                         <p className="bg-transparent pl-2">leaving when ?</p>
-                        <input required type="date" name="date" id="date" min={new Date().toISOString().split('T')[0]} value={date} onChange={(e) => {setDate(e.target.value);setErrors({message: '', error: ''});} } className="hover:bg-gray-200 p-4 rounded-md w-1/2 max-sm:w-11/12 focus:outline-none"/>
+                        <input required type="date" name="date" id="date" min={new Date().toISOString().split('T')[0]} value={date} onChange={(e: { target: { value: any; }; }) => {setDate(e.target.value);setErrors({message: '', error: ''});} } className="hover:bg-gray-200 p-4 rounded-md w-1/2 max-sm:w-11/12 focus:outline-none"/>
                     </label>
                     
                     <label htmlFor="passengers" className="flex flex-row items-center p-4 rounded-md gap-2">
@@ -70,7 +73,10 @@ const Home = () => {
 
                 {errors.message && <p className="text-green-600 text-md">{errors.message}</p>}
 
-                <button type="submit" className="bg-lightBlue shadow-bottom text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-95 max-md:w-2/3 mt-4 py-2">Search</button>
+                <div className="flex flex-row max-md:flex-col gap-3">
+                    <button type="submit" className="bg-lightBlue shadow-bottom text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-95 max-md:w-2/3 mt-4 py-2">Search</button>
+                    <button onClick={() => {navigate('/activeRides')}} className="bg-lightBlue shadow-bottom text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-95 max-md:w-2/3 mt-4 py-2">Active Rides</button>
+                </div>
                 
             </form>
             {results && <div className="bg-white mt-6 w-1/2 max-sm:w-10/12 rounded-md text-barkBlue text-center">
