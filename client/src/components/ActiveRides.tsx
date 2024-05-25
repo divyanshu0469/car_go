@@ -28,13 +28,12 @@ const ActiveRides = () => {
         setErrors(errors => ({...errors, message: '', error: ((err as AxiosError).response?.data?.error ?? 'an error') as string }));
     }
 }
-
-
+useEffect(() => {
+  handleSearch();
+}, [])
 const handleLinkToProfile = (user_id) => {
     navigate(`/profile/${user_id}`);
 }
-
-
   return (
     <div className="flex flex-col justify-center items-center text-lg max-sm:text-base">
 

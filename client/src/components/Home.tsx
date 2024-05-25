@@ -39,9 +39,6 @@ const Home = () => {
             setErrors(errors => ({...errors, message: '', error: ((err as AxiosError).response?.data?.error ?? 'an error') as string }));
         }
     }
-    useEffect(() => {
-        handleSearch();
-      }, [])
 
     const handleLinkToProfile = (user_id) => {
         navigate(`/profile/${user_id}`);
