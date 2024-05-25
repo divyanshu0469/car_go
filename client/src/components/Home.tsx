@@ -70,7 +70,7 @@ const Home = () => {
 
                 {errors.message && <p className="text-green-600 text-md">{errors.message}</p>}
 
-                <div className="flex flex-row max-md:flex-col gap-3">
+                <div className="flex flex-row max-md:flex-col gap-3 w-full justify-center items-center">
                     <button type="submit" className="bg-lightBlue shadow-bottom text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-95 max-md:w-2/3 mt-4 py-2">Search</button>
                     <button onClick={() => {navigate('/activeRides')}} className="bg-lightBlue shadow-bottom text-white rounded-md px-3  w-1/3 hover:opacity-85 hover:scale-95 max-md:w-2/3 mt-4 py-2">Active Rides</button>
                 </div>
