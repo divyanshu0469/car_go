@@ -49,7 +49,7 @@ const Verify = () => {
 
     return (
     <div className="w-full h-3/4 p-4 font-lato flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 flex-col justify-around items-center bg-gradient-to-t from-darkBlue via-lightBlue to-darkBlue text-white text-lg font-semibold outline-2 outline-double">
+        <form onSubmit={handleSubmit} className="w-3/4 max-lg:w-1/2 max-sm:w-3/4 select-none h-full p-3 rounded-lg flex gap-3 flex-col justify-around items-center bg-darkBlue text-white text-lg font-semibold outline-2 outline-double">
             <div className="flex justify-center flex-col items-center">
                 <h1 className="font-extrabold text-5xl mt-6 mb-12 px-6 text-center max-sm:text-3xl">Verify Mail</h1>
             </div>
